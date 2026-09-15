@@ -1,7 +1,7 @@
 # Lead Scoring de tarjetas de crédito — TFM
 
 Trabajo Fin de Máster del Máster en Big Data, Data Science e Inteligencia Artificial
-(Universidad Complutense de Madrid, modalidad semipresencial).
+(Universidad Complutense de Madrid).
 Modalidad elegida: **opción 1, análisis de un dataset con orientación Data Scientist**.
 
 **Prototipo desplegado:** https://pruebatfm-5uu6rosmtmung2ccxoxfsw.streamlit.app
@@ -10,16 +10,12 @@ Modalidad elegida: **opción 1, análisis de un dataset con orientación Data Sc
 
 ## El problema
 
-Un banco quiere saber a qué clientes de su cartera merece la pena ofrecerles una tarjeta
-de crédito. Contactar a todo el mundo es caro y molesta a quien no está interesado; no
-contactar a nadie deja negocio sobre la mesa. El modelo ordena la cartera por
-probabilidad de contratación para que la campaña se dirija a quien más probablemente
-responda, y permite dimensionarla según el presupuesto disponible.
+Un banco quiere saber a qué clientes de su cartera merece la pena ofrecerles una tarjeta de crédito. Contactar a todo el mundo es caro y molesta a quien no está interesado; no contactar a nadie deja negocio sin estrategias que le permitan adquirir clientes por otros canales. El modelo ordena la cartera por probabilidad de contratación para que la campaña se dirija a quien más probablemente responda, y permite dimensionarla según el presupuesto disponible.
 
 ## Datos
 
 - **Origen:** *Credit Card Lead Prediction*, procedente del JOB-A-THON de Analytics
-  Vidhya (mayo de 2021), publicado en Kaggle.
+  Vidhya (mayo de 2021), publicado en Kaggle. (https://www.kaggle.com/datasets/adityasharma95/credit-card-lead-prediction-analytics-vidhya)
 - **Volumen:** 245.725 clientes, 9 variables explicativas.
 - **Variable objetivo:** `Is_Lead`, con un 23,7 % de casos positivos.
 - Los ficheros de datos no se incluyen en este repositorio; se descargan de Kaggle.
@@ -52,13 +48,11 @@ contactando al azar.
 | `metadatos.json` | Métricas, rangos de las variables y lista de columnas de entrada. La aplicación no tiene ninguna constante escrita a mano |
 | `requirements.txt` | Versiones exactas de las dependencias |
 
-El notebook del análisis se entrega como anexo de la memoria.
-
 ## Cómo reproducir el trabajo
 
-Todo el análisis está en un **único notebook**, `TFM_Lead_Scoring_UNIFICADO.ipynb`, que
-se ejecuta de principio a fin en Google Colab en unos 15 minutos. Hay que subir
-previamente `train_s3TEQDk.csv` a la sesión.
+Todo el análisis está en un **único notebook**, `TFM_Lead_Scoring_DECP.ipynb`, que
+se ejecuta de principio a fin en Google Colab en unos 15 minutos aproximadamente. 
+Hay que subir previamente `train_s3TEQDk.csv` a la sesión.
 
 El notebook recorre el análisis descriptivo, las transformaciones, la comparación de
 técnicas con ajuste de hiperparámetros e intervalos de confianza por *bootstrap*, el
@@ -69,16 +63,6 @@ artefactos de producción de este repositorio.
 
 Todos los procesos aleatorios usan `random_state = 42`, de modo que los resultados son
 reproducibles ejecución tras ejecución.
-
-## Cómo ejecutar el prototipo en local
-
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
-
-Los cuatro ficheros (`app.py`, `modelo_pipeline.pkl`, `opciones.json` y
-`metadatos.json`) deben estar en el mismo directorio.
 
 **Dependencias y versiones.** `scikit-learn` cambia entre versiones la forma de
 serializar algunos objetos internos, así que el `.pkl` solo carga correctamente con las
@@ -126,7 +110,3 @@ encuentra el cliente más que una característica suya. Si el banco modifica la 
 registrar ese campo, el modelo perderá buena parte de su capacidad y habrá que
 reentrenarlo. El notebook incluye un plan de monitorización orientado a detectar
 precisamente esa deriva.
-
-## Autoría
-
-Trabajo individual. Tutores: Carlos Ortega y Santiago Mota.
