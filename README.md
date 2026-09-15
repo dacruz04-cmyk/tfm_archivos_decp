@@ -4,7 +4,7 @@ Trabajo Fin de Máster del Máster en Big Data, Data Science e Inteligencia Arti
 (Universidad Complutense de Madrid).
 Modalidad elegida: **opción 1, análisis de un dataset con orientación Data Scientist**.
 
-**Prototipo desplegado:** https://pruebatfm-5uu6rosmtmung2ccxoxfsw.streamlit.app
+**Prototipo desplegado:** https://leadscoringtfm.streamlit.app
 
 ---
 
