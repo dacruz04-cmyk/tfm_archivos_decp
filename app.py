@@ -1,6 +1,6 @@
-"""Prototipo de lead scoring — TFM Máster Big Data, Data Science e IA (UCM).
+"""Lead scoring — TFM Máster Big Data, Data Science e IA (UCM).
 
-Productivización del modelo descrito en la memoria. Ofrece dos modos de uso:
+Productivización del modelo descrito en el documento final del TFM. Ofrece dos modos de uso:
 
 1. Consulta individual: los datos de un cliente y su propensión.
 2. Priorización de cartera: un fichero CSV con muchos clientes, devuelto ya ordenado
@@ -8,16 +8,15 @@ Productivización del modelo descrito en la memoria. Ofrece dos modos de uso:
 
 Decisiones del modelo que condicionan esta aplicación:
 
-- El modelo se entrena SIN reponderado de clases, de forma deliberada. Las tres
+- El modelo se entrena sin reponderado de clases, de forma deliberada. Las tres
   estrategias probadas (sin balanceo, reponderado y SMOTENC) ordenan a los clientes
   prácticamente igual, pero solo la primera produce probabilidades calibradas, y la
   regla de decisión de esta aplicación depende de que lo estén.
-- El modelo NO utiliza el género del cliente ni su región. Ninguna de las dos aporta
+- El modelo no utiliza el género del cliente ni su región. Ninguna de las dos aporta
   capacidad predictiva apreciable, y en el caso del género se trata además de una
   categoría protegida en el acceso a servicios financieros.
 
-Todas las constantes proceden de `metadatos.json`, que genera el notebook. No hay
-ningún número escrito a mano en este fichero.
+Todas las constantes proceden de `metadatos.json`, que genera el notebook.
 """
 
 import io
@@ -273,7 +272,5 @@ with tab_cartera:
 st.divider()
 st.caption(
     f"ROC-AUC de {meta['roc_auc_test']} y Brier score de {meta['brier_test']} sobre el "
-    "conjunto de test. Las probabilidades están calibradas: de cada 100 clientes a los "
-    "que el modelo asigna un 40%, en torno a 40 acaban contratando. Detalles "
-    "metodológicos en la memoria del TFM."
+    "conjunto de test."
 )
