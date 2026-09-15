@@ -1,0 +1,45 @@
+{
+  "tasa_base": 0.2372,
+  "roc_auc_test": 0.8726,
+  "pr_auc_test": 0.7476,
+  "brier_test": 0.1043,
+  "n_entrenamiento": 245725,
+  "n_test": 49145,
+  "rangos": {
+    "Age": [
+      23,
+      85
+    ],
+    "Vintage": [
+      7,
+      135
+    ],
+    "Avg_Account_Balance": [
+      20790,
+      10352009
+    ]
+  },
+  "variables_modelo": [
+    "Occupation_Other",
+    "Occupation_Salaried",
+    "Occupation_Self_Employed",
+    "Channel_Code_X2",
+    "Channel_Code_X3",
+    "Channel_Code_X4",
+    "Credit_Product_Unknown",
+    "Credit_Product_Yes",
+    "Is_Active_Yes",
+    "Avg_Account_Balance",
+    "Age",
+    "Vintage"
+  ],
+  "columnas_entrada": [
+    "Occupation",
+    "Channel_Code",
+    "Credit_Product",
+    "Is_Active",
+    "Age",
+    "Vintage",
+    "Avg_Account_Balance"
+  ]
+}
